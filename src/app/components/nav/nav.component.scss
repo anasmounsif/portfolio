@@ -1,0 +1,21 @@
+.nav {
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+
+  &.scrolled {
+    box-shadow: rgba(33, 35, 38, 0.1) 0 10px 10px -10px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem;
+  }
+}
