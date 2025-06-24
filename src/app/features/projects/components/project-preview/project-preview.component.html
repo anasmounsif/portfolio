@@ -1,3 +1,15 @@
-@if (project(); as p) {
-  <pre>{{ p | json }}</pre>
-}
+@let p = project();
+@let s = projectStatus();
+
+<p-tag [rounded]="true" [value]="s.value" [severity]="s.severity" />
+<p-image alt="Image" width="150px" [src]="p.image" />
+<p-button
+  severity="secondary"
+  size="small"
+  aria-label="Navigate"
+  iconPos="right"
+  [icon]="isAccessible() ? 'pi pi-arrow-up-right' : 'pi pi-lock'"
+  [label]="p.title"
+  [rounded]="true"
+  [outlined]="true"
+/>

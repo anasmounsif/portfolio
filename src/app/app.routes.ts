@@ -5,6 +5,6 @@ export const routes: Routes = [
   {
     path: 'projects',
     loadChildren: () =>
-      import('./features/projects/reports.routes').then((c) => c.routes),
+      import('./features/projects/projects.routes').then((c) => c.routes),
   },
 ];

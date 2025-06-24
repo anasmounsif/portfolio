@@ -1,5 +1,7 @@
 export enum ProjectStatus {
+  draft,
+  active,
+  paused,
   completed,
-  developing,
-  ideating,
+  cancelled,
 }
