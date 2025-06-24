@@ -1,0 +1,10 @@
+<h1 class="headline">
+  Hey there 👋 I'm Anas.<br />
+  <span class="muted">Here's what I've been working on.</span>
+</h1>
+
+<div class="project-list">
+  @for (p of projectsService.projects$ | async; track p.id) {
+    <app-project-preview [project]="p"></app-project-preview>
+  }
+</div>

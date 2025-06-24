@@ -1,0 +1,16 @@
+@let p = project();
+@let s = projectStatus();
+
+<p-tag [rounded]="true" [value]="s.value" [severity]="s.severity" />
+<p-image width="150px" [alt]="p.title" [src]="p.image" />
+<p-button
+  severity="secondary"
+  size="small"
+  aria-label="Navigate"
+  iconPos="right"
+  [icon]="p.isAccessible ? 'pi pi-arrow-up-right' : 'pi pi-lock'"
+  [label]="p.title"
+  [rounded]="true"
+  [outlined]="true"
+  (click)="navigateToProject()"
+/>
