@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { Project } from '../../model/project.model';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
@@ -14,7 +14,6 @@ import { ImageModule } from 'primeng/image';
 })
 export class ProjectPreviewComponent {
   project = input.required<Project>();
-  isAccessible = input<boolean>(true);
   projectStatus = computed<Status>(() => this.statusMap[this.project().status]);
 
   readonly statusMap: Record<ProjectStatus, Status> = {
@@ -24,4 +23,10 @@ export class ProjectPreviewComponent {
     [ProjectStatus.completed]: { value: 'Completed', severity: 'success' },
     [ProjectStatus.cancelled]: { value: 'Cancelled', severity: 'danger' },
   };
+
+  navigateToProject() {
+    if (this.project().isAccessible) {
+      window.open(this.project().url, '_blank');
+    }
+  }
 }

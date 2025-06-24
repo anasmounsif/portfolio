@@ -5,4 +5,6 @@ export interface Project {
   title: string;
   status: ProjectStatus;
   image: string; // TODO: to treat as blob
+  isAccessible: boolean;
+  url: string;
 }
