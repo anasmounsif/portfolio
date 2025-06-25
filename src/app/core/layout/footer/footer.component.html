@@ -1,0 +1,11 @@
+@for (s of socials; track $index) {
+  <p-button
+    severity="secondary"
+    size="small"
+    [attr.aria-label]="s.name"
+    [icon]="s.icon"
+    [rounded]="true"
+    [outlined]="true"
+    (onClick)="navigateToSocial(s.url)"
+  />
+}
