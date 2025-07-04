@@ -5,6 +5,8 @@
 
 <div class="project-list">
   @for (p of projectsService.projects$ | async; track p.id) {
-    <app-project-preview [project]="p"></app-project-preview>
+    @if (p.showProject) {
+      <app-project-preview [project]="p"></app-project-preview>
+    }
   }
 </div>
